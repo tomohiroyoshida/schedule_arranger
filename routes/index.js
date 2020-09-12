@@ -6,7 +6,6 @@ const Schedule = require('../models/schedule');
 /* GET home page. */
 router.get('/', (req, res, next) => {
   const title = '予定調整くん';
-  console.log('req: ', req);
   if (req.user) {
     Schedule.findAll({
       where: {

@@ -14,5 +14,10 @@ block content
       tr
         th #{candidate.candidateName}
         each user in users
+          - var availability = availabilityMapMap.get(user.userId).get(candidate.candidateId)
+          - var availabilityLabels =  ['欠', '？', '出'];
           td
-            button 欠席
+            if user.isSelf
+              button #{availabilityLabels[availability]}
+            else
+              p #{availabilityLabels[availability]}
