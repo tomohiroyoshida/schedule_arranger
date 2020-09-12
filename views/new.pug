@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  form(method="post", action="/schedules")
+    div
+      h5 予定名
+      input(type="text" name="scheduleName")
+    div
+      h5 メモ
+      textarea(name="memo")
+    div
+      h5 候補日程 (改行して複数入力してください)
+      textarea(name="candidates")
+    button(type="submit") 予定をつくる
