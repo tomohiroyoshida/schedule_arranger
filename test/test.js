@@ -121,6 +121,45 @@ describe('/schedules/:scheduleId/users/:userId/candidates/:candidateId', () => {
   });
 });
 
+describe('/schedules/:scheduleId/users/:userId/comments', () => {
+    beforeAll(() => {
+      passportStub.install(app);
+      passportStub.login({ id: 0, username: 'testuser' });
+    });
+  
+    afterAll(() => {
+      passportStub.logout();
+      passportStub.uninstall(app);
+    });
+  
+    test('コメントが更新できる', (done) => {
+      User.upsert({ userId: 0, username: 'testuser' }).then(() => {
+        request(app)
+          .post('/schedules')
+          .send({ scheduleName: 'テストコメント更新予定1', memo: 'テストコメント更新メモ1', candidates: 'テストコメント更新候補1' })
+          .end((err, res) => {
+            const createdSchedulePath = res.headers.location;
+            const scheduleId = createdSchedulePath.split('/schedules/')[1];
+            // 更新がされることをテスト
+            const userId = 0;
+            request(app)
+              .post(`/schedules/${scheduleId}/users/${userId}/comments`)
+              .send({ comment: 'testcomment' })
+              .expect('{"status":"OK","comment":"testcomment"}')
+              .end((err, res) => {
+                Comment.findAll({
+                  where: { scheduleId: scheduleId }
+                }).then((comments) => {
+                  assert.equal(comments.length, 1);
+                  assert.equal(comments[0].comment, 'testcomment');
+                  deleteScheduleAggregate(scheduleId, done, err);
+                });
+              });
+          });
+      });
+    });
+  });
+
 function deleteScheduleAggregate(scheduleId, done, err) {
   Availability.findAll({
     where: { scheduleId: scheduleId }
