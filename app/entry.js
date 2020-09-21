@@ -1,6 +1,5 @@
-
 'use strict';
-const $ = require('jquery');
+import $ from 'jquery';
 
 $('.availability-toggle-button').each((i, e) => {
   const button = $(e);

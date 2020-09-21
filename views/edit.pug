@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h3 予定の編集
+  form(method="post", action=`/schedules/${schedule.scheduleId}?edit=1`)
+    div
+      h5 予定名
+      input(type="text" name="scheduleName" value=schedule.scheduleName)
+    div
+      h5 メモ
+      textarea(name="memo") #{schedule.memo}
+    div
+      label 既存の候補日程
+      ul
+        each candidate in candidates
+          li #{candidate.candidateName}
+      p 候補日程の追加 (改行して複数入力してください)
+      textarea(name="candidates")
+    div
+      button(type="submit") 以上の内容で予定を編集する

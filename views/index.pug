@@ -14,14 +14,13 @@ block content
         h3 あなたの作った予定一覧
         table.table
           tr
-           th 予定名
-           th 更新日時
+            th 予定名
+            th 更新日時
           each schedule in schedules
-           tr 
-            td
-              a(href=`/schedules/${schedule.scheduleId}`) #{schedule.scheduleName}
-            td #{schedule.updatedAt}
+            tr
+              td
+                a(href=`/schedules/${schedule.scheduleId}`) #{schedule.scheduleName}
+              td #{schedule.updatedAt}
     else
       div
         a(href="/login") ログイン
-
