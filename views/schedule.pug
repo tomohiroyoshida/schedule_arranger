@@ -4,7 +4,11 @@ block content
   h4 #{schedule.scheduleName}
   p(style="white-space:pre;") #{schedule.memo}
   p 作成者: #{schedule.user.username}
-  h3 出欠表
+  - var isMine = parseInt(user.id) === schedule.user.userId
+  if isMine
+    div
+      a(href=`/schedules/${schedule.scheduleId}/edit`) この予定を編集する
+      h3 出欠表
   table
     tr
       th 予定
