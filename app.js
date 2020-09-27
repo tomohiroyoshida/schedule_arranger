@@ -42,7 +42,7 @@ passport.deserializeUser(function (obj, done) {
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: allbackURL: process.env.HEROKU_URL 
+  callbackURL: process.env.HEROKU_URL 
   ? process.env.HEROKU_URL + 'auth/github/callback'
   : 'http://localhost:8000/auth/github/callback'
 },
