@@ -3,6 +3,7 @@ extends layout
 block content
   h3.my-3 予定の編集
   form(method="post", action=`/schedules/${schedule.scheduleId}?edit=1`)
+    input(type="hidden" name="_csrf" value!=csrfToken)
     div.form-group
       label(for="scheduleName") 予定名
       input(type="text" name="scheduleName" value=schedule.scheduleName)#scheduleName.form-control
@@ -19,5 +20,6 @@ block content
     div
       button(type="submit").btn.btn-info 以上の内容で予定を編集する
   h3.my-3 危険な変更
-  form(method="post", action=`/schedules/${schedule.scheduleId}?delete=1`)
+  form(method="post", action=`/schedules/${schedule.scheduleId}?delete=1`)  
+    input(type="hidden" name="_csrf" value!=csrfToken)
     button(type="submit").btn.btn-danger この予定を削除する
