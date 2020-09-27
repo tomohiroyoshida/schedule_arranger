@@ -27,7 +27,7 @@
   - Jest
   - Webpack
   - Websocket
-  - GitHub Auth
+  - GitHub OAuth
   - Circle CI
   - Heroku
   - Linux(Ubuntu)
