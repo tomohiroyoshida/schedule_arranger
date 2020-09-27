@@ -4706,12 +4706,24 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
+moment-timezone@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.0.tgz#f282c8e5e6e28614b2f6dd1048663754d30ea11f"
+  integrity sha1-8oLI5ebihhSy9t0QSGY3VNMOoR8=
+  dependencies:
+    moment ">= 2.6.0"
+
 moment-timezone@^0.5.21:
   version "0.5.31"
   resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.31.tgz#9c40d8c5026f0c7ab46eda3d63e49c155148de05"
   integrity sha512-+GgHNg8xRhMXfEbv81iDtrVeTcWt0kWmTEY1XQK14dICTXnWJnT0dxdlPspwqF3keKMVPXwayEsk1DI0AA/jdA==
   dependencies:
     moment ">= 2.9.0"
+
+"moment@>= 2.6.0":
+  version "2.29.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.0.tgz#fcbef955844d91deb55438613ddcec56e86a3425"
+  integrity sha512-z6IJ5HXYiuxvFTI6eiQ9dm77uE0gyy1yXNApVHqTcnIKfY9tIwEjlzsZ6u1LQXvVgKeTnv9Xm7NDvJ7lso3MtA==
 
 "moment@>= 2.9.0", moment@^2.24.0:
   version "2.28.0"
