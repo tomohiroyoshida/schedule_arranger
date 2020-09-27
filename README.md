@@ -1,6 +1,6 @@
 # 予定調整くん
 
-[N予備校Webプログラミング入門コース](https://www.nnn.ed.nico/pages/programming/)で作成した予定調整ようのWebアプリケーションです。
+[N予備校Webプログラミング入門コース](https://www.nnn.ed.nico/pages/programming/)で作成した、GitHubアカウントを使った大人数で予定調整ができるのWebアプリケーションです。
 
 ## 概要
 使い方
@@ -21,7 +21,7 @@
 - バックエンド
   - Node.js
   - Express
-- ツール・ミドルウェア
+- ツール・ミドルウェア・その他
   - PostgreSQL
   - Sequelize
   - Jest
@@ -30,6 +30,7 @@
   - GitHub Auth
   - Circle CI
   - Heroku
+  - Linux(Ubuntu)
 
 工夫した点
 - セキュリティ対策(特にCSRF)を行いました。
