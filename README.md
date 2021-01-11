@@ -14,10 +14,9 @@ GitHubアカウントを使った大人数で予定調整ができるのWebア�
 
 使用技術
 - フロントエンド
-  - JavaScript
   - pug
+  - JavaScript
   - jQuery
-  - Bootstrap
 - バックエンド
   - Node.js
   - Express
@@ -25,6 +24,7 @@ GitHubアカウントを使った大人数で予定調整ができるのWebア�
   - PostgreSQL
   - Sequelize
   - Jest
+  - Bootstrap
   - Webpack
   - Websocket
   - GitHub OAuth
